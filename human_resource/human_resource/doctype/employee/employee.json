@@ -1,4 +1,6 @@
 {
+ "_comments": "[]",
+ "_liked_by": "[]",
  "actions": [],
  "allow_rename": 1,
  "creation": "2023-01-14 16:53:02.381041",
@@ -11,9 +13,10 @@
   "middle_name",
   "last_name",
   "full_name",
+  "date_of_birth",
+  "age",
   "image",
   "status",
-  "date_of_birth",
   "date_of_joining",
   "mobile",
   "department",
@@ -82,11 +85,16 @@
    "fieldtype": "Table",
    "label": " Employee Education ",
    "options": "Employee Education"
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Data",
+   "label": "Age"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-14 16:53:02.381041",
+ "modified": "2023-01-26 19:01:01.129190",
  "modified_by": "Administrator",
  "module": "Human Resource",
  "name": "Employee",
@@ -101,6 +109,19 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   }
