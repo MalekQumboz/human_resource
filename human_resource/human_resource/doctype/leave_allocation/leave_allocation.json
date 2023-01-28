@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "Leave_Allocation.####",
  "creation": "2023-01-21 15:43:54.532286",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -22,16 +23,11 @@
    "options": "Employee"
   },
   {
-   "fetch_from": "empolyee.full_name",
-   "fieldname": "employee_name",
-   "fieldtype": "Data",
-   "label": "Employee Name",
-   "read_only": 1
-  },
-  {
+   "fetch_from": "employee.department",
    "fieldname": "department",
    "fieldtype": "Data",
-   "label": "Department"
+   "label": "Department",
+   "read_only": 1
   },
   {
    "fieldname": "leave_type",
@@ -50,14 +46,21 @@
    "label": "To Date"
   },
   {
+   "fetch_from": "employee.full_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
    "fieldname": "total_leaves_allocated",
-   "fieldtype": "Int",
+   "fieldtype": "Float",
    "label": "Total Leaves Allocated"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-21 15:50:03.111909",
+ "modified": "2023-01-28 12:04:47.084656",
  "modified_by": "Administrator",
  "module": "Human Resource",
  "name": "Leave Allocation",

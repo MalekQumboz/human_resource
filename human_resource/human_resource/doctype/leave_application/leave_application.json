@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "Leave_Application.####",
  "creation": "2023-01-21 15:35:36.969785",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -8,15 +9,16 @@
  "field_order": [
   "employee",
   "employee_name",
-  "leave_type",
   "department",
+  "leave_type",
   "status",
   "leave_balance_before_application",
   "from_date",
   "to_date",
   "total_leave_days",
   "alternative_employee",
-  "reason"
+  "reason",
+  "amended_from"
  ],
  "fields": [
   {
@@ -26,9 +28,11 @@
    "options": "Employee"
   },
   {
+   "fetch_from": "employee.full_name",
    "fieldname": "employee_name",
    "fieldtype": "Data",
-   "label": "Employee Name"
+   "label": "Employee Name",
+   "read_only": 1
   },
   {
    "fieldname": "leave_type",
@@ -37,9 +41,11 @@
    "options": "Leave Type"
   },
   {
+   "fetch_from": "employee.department",
    "fieldname": "department",
    "fieldtype": "Data",
-   "label": "Department"
+   "label": "Department",
+   "read_only": 1
   },
   {
    "fieldname": "status",
@@ -50,7 +56,8 @@
   {
    "fieldname": "leave_balance_before_application",
    "fieldtype": "Float",
-   "label": "Leave Balance Before Application"
+   "label": "Leave Balance Before Application",
+   "read_only": 1
   },
   {
    "fieldname": "from_date",
@@ -64,23 +71,35 @@
   },
   {
    "fieldname": "total_leave_days",
-   "fieldtype": "Int",
-   "label": "Total Leave Days"
+   "fieldtype": "Float",
+   "label": "Total Leave Days",
+   "read_only": 1
   },
   {
    "fieldname": "alternative_employee",
-   "fieldtype": "Data",
-   "label": "Alternative Employee"
+   "fieldtype": "Link",
+   "label": "Alternative Employee",
+   "options": "Employee"
   },
   {
    "fieldname": "reason",
    "fieldtype": "Text",
    "label": "Reason"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Leave Application",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2023-01-21 15:35:36.969785",
+ "modified": "2023-01-28 13:31:01.302668",
  "modified_by": "Administrator",
  "module": "Human Resource",
  "name": "Leave Application",

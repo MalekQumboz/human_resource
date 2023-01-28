@@ -3,6 +3,7 @@
  "_liked_by": "[]",
  "actions": [],
  "allow_rename": 1,
+ "autoname": "Employee.####",
  "creation": "2023-01-14 16:53:02.381041",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -25,7 +26,7 @@
  "fields": [
   {
    "fieldname": "employee_number",
-   "fieldtype": "Int",
+   "fieldtype": "Data",
    "label": "Employee Number"
   },
   {
@@ -94,7 +95,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-26 19:01:01.129190",
+ "modified": "2023-01-28 08:18:15.219940",
  "modified_by": "Administrator",
  "module": "Human Resource",
  "name": "Employee",
