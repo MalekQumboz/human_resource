@@ -11,9 +11,11 @@
   "employee_name",
   "department",
   "leave_type",
+  "applicable",
   "from_date",
   "to_date",
-  "total_leaves_allocated"
+  "total_leaves_allocated",
+  "amended_from"
  ],
  "fields": [
   {
@@ -56,11 +58,25 @@
    "fieldname": "total_leaves_allocated",
    "fieldtype": "Float",
    "label": "Total Leaves Allocated"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Leave Allocation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "applicable",
+   "fieldtype": "Float",
+   "label": "Applicable"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-28 12:04:47.084656",
+ "modified": "2023-01-29 14:20:25.400661",
  "modified_by": "Administrator",
  "module": "Human Resource",
  "name": "Leave Allocation",
