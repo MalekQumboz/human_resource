@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "faba6224-5989-4bf1-a8d0-90040c1b13de",
+		"name": "Human-Resource",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21535721"
+	},
+	"item": [
+		{
+			"name": "New Employee Attendance",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "token 83d6024bc9f2a01:ce58f2e7d4b9261",
+						"description": " ",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"attendance_date\":\"2-4-2023\",\n\"check_in\":\"08:28:57\",\n\"check_out\":\"14:29:54\"\n}"
+				},
+				"url": {
+					"raw": "http://0.0.0.0:8000/api/method/human_resource.human_resource.doctype.attendance.attendance.create_attendance",
+					"protocol": "http",
+					"host": [
+						"0",
+						"0",
+						"0",
+						"0"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"method",
+						"human_resource.human_resource.doctype.attendance.attendance.create_attendance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
