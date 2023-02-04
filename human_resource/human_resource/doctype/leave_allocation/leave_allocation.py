@@ -21,9 +21,11 @@ class LeaveAllocation(Document):
 	def check_employee_allocation(self):
 
 		data = frappe.db.sql(""" SELECT employee FROM `tabLeave Allocation`
-					where employee = %s  and leave_type = %s  and 
-					((from_date <= %s  and to_date >= %s) or (from_date <= %s  and to_date >= %s))""",
-					  (self.employee, self.leave_type, self.from_date, self.from_date,self.to_date,self.to_date), as_dict=1)
+					where name !=%s and employee = %s  and leave_type = %s  and 
+					( (from_date <= %s  and to_date >= %s) or (from_date <= %s  and to_date >= %s) 
+						or (from_date >= %s  and to_date <= %s) )""",
+					  (self.name,self.employee, self.leave_type, self.from_date, self.from_date,
+					   self.to_date,self.to_date,self.from_date,self.to_date), as_dict=1)
 		if data:
 			frappe.throw("Leave Allocation for Employee already exists")
 

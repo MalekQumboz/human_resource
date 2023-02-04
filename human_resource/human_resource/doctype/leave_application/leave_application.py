@@ -120,4 +120,25 @@ class LeaveApplication(Document):
 				frappe.throw(f"""The leave request must be submitted at least {applicable} days in advance.""")
 
 
+@frappe.whitelist()
+def get_total_leave_days(from_date=None ,to_date=None):
+	total_leave_days = 0
+	if from_date and to_date:
+		total_leave_days = frappe.utils.date_diff(to_date, from_date) + 1
+	if total_leave_days >= 0:
+		return total_leave_days
+	else:
+		return 0
+@frappe.whitelist()
+def get_leave_balance(employee=None ,leave_type=None ,from_date=None ,to_date=None):
+	if employee and leave_type and from_date and to_date:
+		leave_balance = frappe.db.sql(""" SELECT total_leaves_allocated FROM `tabLeave Allocation`
+		where employee = %s  and leave_type = %s  and from_date <= %s  and to_date >= %s  """,
+									  (employee,leave_type, from_date, to_date), as_dict=1)
+	if leave_balance:
+		return leave_balance[0].total_leaves_allocated
+	else:
+		return 0
+
+
 

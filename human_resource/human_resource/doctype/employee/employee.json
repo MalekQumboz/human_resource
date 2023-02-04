@@ -17,6 +17,7 @@
   "date_of_birth",
   "age",
   "image",
+  "user",
   "status",
   "date_of_joining",
   "mobile",
@@ -26,7 +27,7 @@
  "fields": [
   {
    "fieldname": "employee_number",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Employee Number"
   },
   {
@@ -51,7 +52,7 @@
   },
   {
    "fieldname": "image",
-   "fieldtype": "Text",
+   "fieldtype": "Image",
    "label": "Image"
   },
   {
@@ -91,11 +92,17 @@
    "fieldname": "age",
    "fieldtype": "Data",
    "label": "Age"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-01-28 08:18:15.219940",
+ "modified": "2023-02-03 21:03:53.646390",
  "modified_by": "Administrator",
  "module": "Human Resource",
  "name": "Employee",
