@@ -7,7 +7,9 @@ from frappe.model.document import Document
 class Attendance(Document):
 
 	# def on_submit(self):
-	# 	pass
+	# 	self.work_hours_()
+	# 	self.late_hours_()
+	# 	self.status_()
 	def validate(self):
 		self.work_hours_()
 		self.late_hours_()
@@ -67,7 +69,7 @@ class Attendance(Document):
 		early_exit = self.early_exit_()
 
 		work_hours=0
-		if self.check_out and self.check_in:
+		if self.check_out and self.check_in and not(self.check_in < start_time and self.check_out <start_time) and not(self.check_in > end_time and self.check_out >end_time):
 			#Verify that there are no delays and bring the number of working hours
 			if late_entry == 0 and early_exit==0:
 				work_hours = frappe.utils.time_diff_in_hours(end_time,start_time)
@@ -104,7 +106,7 @@ class Attendance(Document):
 					self.status = 'Present'
 
 	def check_time(self):
-		if self.check_in > self.check_out :
+		if frappe.utils.get_time(self.check_in) > frappe.utils.get_time(self.check_out) :
 			frappe.throw('Check In must be before the Check Out.')
 
 
